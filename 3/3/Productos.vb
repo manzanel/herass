@@ -84,18 +84,23 @@ Public Class Productos
     Public Sub insertar(ByVal producto As productos)
         Dim strconexion As String = "Server= CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection=true;"
         Dim objconexion As New SqlConnection(strconexion)
-        Dim strcomando As String = "INSERT INTO productos (Nombre,Cantidad,Unidad,Minimo,Apedir)  VALUES (@Nombre,@Cantidad,@Unidad, @Minimo,@Apedir) "
-        Dim objcomando As New SqlCommand(strcomando, objconexion)
-        objcomando.Parameters.Add("@Nombre", SqlDbType.VarChar)
-        objcomando.Parameters.Add("@Cantidad", SqlDbType.VarChar)
-        objcomando.Parameters.Add("@Unidad", SqlDbType.VarChar)
-        objcomando.Parameters.Add("@Minimo", SqlDbType.VarChar)
-        objcomando.Parameters.Add("@Apedir", SqlDbType.VarChar)
-        objcomando.Parameters("@Nombre").Value = producto.Nombre
-        objcomando.Parameters("@Cantidad").Value = producto.Cantidad
-        objcomando.Parameters("@Unidad").Value = producto.Unidad
-        objcomando.Parameters("@Minimo").Value = producto.Minimo
-        objcomando.Parameters("@Apedir").Value = producto.Apedir
+        'Dim strcomando As String = "INSERT INTO productos (Nombre,Cantidad,Unidad,Minimo,Apedir)  VALUES (@Nombre,@Cantidad,@Unidad, @Minimo,@Apedir) "
+        Dim objcomando As New SqlCommand("InsertarProducto", objconexion)
+
+        objcomando.CommandType = CommandType.StoredProcedure
+        objcomando.Parameters.AddWithValue("@Nombre", producto.Nombre)
+
+
+        'objcomando.Parameters.Add("@Nombre", SqlDbType.VarChar)
+        objcomando.Parameters.AddWithValue("@Cantidad", producto.Cantidad)
+        objcomando.Parameters.AddWithValue("@Unidad", producto.Unidad)
+        objcomando.Parameters.AddWithValue("@Minimo", producto.Minimo)
+        objcomando.Parameters.AddWithValue("@Apedir", producto.Apedir)
+        'objcomando.Parameters("@Nombre").Value = producto.Nombre
+        'objcomando.Parameters("@Cantidad").Value = producto.Cantidad
+        'objcomando.Parameters("@Unidad").Value = producto.Unidad
+        'objcomando.Parameters("@Minimo").Value = producto.Minimo
+        'objcomando.Parameters("@Apedir").Value = producto.Apedir
 
         objconexion.Open()
         objcomando.ExecuteNonQuery()
@@ -105,20 +110,29 @@ Public Class Productos
     Public Sub modificar(ByVal producto As Productos)
         Dim strconexion As String = "Server= CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection=true;"
         Dim objconexion As New SqlConnection(strconexion)
-        Dim strcomando As String = "UPDATE productos SET Nombre=@Nombre,Cantidad=@Cantidad,Unidad=@Unidad, Minimo =@Minimo, Apedir= @Apedir WHERE Id=@Id"
-        Dim objcomando As New SqlCommand(strcomando, objconexion)
-        objcomando.Parameters.Add("@Id", SqlDbType.Int)
-        objcomando.Parameters.Add("@Nombre", SqlDbType.VarChar)
-        objcomando.Parameters.Add("@Cantidad", SqlDbType.VarChar)
-        objcomando.Parameters.Add("@Unidad", SqlDbType.VarChar)
-        objcomando.Parameters.Add("@Minimo", SqlDbType.VarChar)
-        objcomando.Parameters.Add("@Apedir", SqlDbType.VarChar)
-        objcomando.Parameters("@Id").Value = producto.Id
-        objcomando.Parameters("@Nombre").Value = producto.Nombre
-        objcomando.Parameters("@Cantidad").Value = producto.Cantidad
-        objcomando.Parameters("@Unidad").Value = producto.Unidad
-        objcomando.Parameters("@Minimo").Value = producto.Minimo
-        objcomando.Parameters("@Apedir").Value = producto.Apedir
+        'Dim strcomando As String = "UPDATE productos SET Nombre=@Nombre,Cantidad=@Cantidad,Unidad=@Unidad, Minimo =@Minimo, Apedir= @Apedir WHERE Id=@Id"
+        Dim objcomando As New SqlCommand("ModificarProducto", objconexion)
+
+        objcomando.CommandType = CommandType.StoredProcedure
+        objcomando.Parameters.AddWithValue("@Nombre", producto.Nombre)
+
+
+
+
+
+
+        'objcomando.Parameters.Add("@Id", SqlDbType.Int)
+        'objcomando.Parameters.Add("@Nombre", SqlDbType.VarChar)
+        objcomando.Parameters.AddWithValue("@Cantidad", producto.Cantidad)
+        objcomando.Parameters.AddWithValue("@Unidad", producto.Unidad)
+        objcomando.Parameters.AddWithValue("@Minimo", producto.Minimo)
+        objcomando.Parameters.AddWithValue("@Apedir", producto.Apedir)
+        'objcomando.Parameters("@Id").Value = producto.Id
+        'objcomando.Parameters("@Nombre").Value = producto.Nombre
+        'objcomando.Parameters("@Cantidad").Value = producto.Cantidad
+        'objcomando.Parameters("@Unidad").Value = producto.Unidad
+        'objcomando.Parameters("@Minimo").Value = producto.Minimo
+        'objcomando.Parameters("@Apedir").Value = producto.Apedir
 
         objconexion.Open()
         objcomando.ExecuteNonQuery()

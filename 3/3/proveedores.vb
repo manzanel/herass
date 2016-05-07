@@ -84,20 +84,23 @@ Public Class proveedores
     Public Sub insertar(ByVal proveedor As proveedores)
         Dim strconexion As String = "Server=CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection= True;"
         Dim objconexion As New SqlConnection(strconexion)
-        Dim strcomando As String = "INSERT INTO proveedor (Nombre,Direccion,Catalogo,Email,Telefono) VALUES (@Nombre,@Direccion,@Catalogo,@Email,@Telefono)"
-        Dim objcomando As New SqlCommand(strcomando, objconexion)
-        'objcomando.CommandType = CommandType.StoredProcedure
-        'objcomando.Parameters.AddWithValue("@Nombre", proveedor.Nombre)
-        objcomando.Parameters.Add("@Nombre", SqlDbType.VarChar)
-        objcomando.Parameters.Add("@Direccion", SqlDbType.VarChar)
-        objcomando.Parameters.Add("@Catalogo", SqlDbType.VarChar)
-        objcomando.Parameters.Add("@Email", SqlDbType.VarChar)
-        objcomando.Parameters.Add("@Telefono", SqlDbType.VarChar)
-        objcomando.Parameters("@Nombre").Value = proveedor.Nombre
-        objcomando.Parameters("@Direccion").Value = proveedor.Direccion
-        objcomando.Parameters("@Catalogo").Value = proveedor.Catalogo
-        objcomando.Parameters("@Email").Value = proveedor.Email
-        objcomando.Parameters("@Telefono").Value = proveedor.Telefono
+        'Dim strcomando As String = "INSERT INTO proveedor (Nombre,Direccion,Catalogo,Email,Telefono) VALUES (@Nombre,@Direccion,@Catalogo,@Email,@Telefono)"
+        Dim objcomando As New SqlCommand("InsertarProveedor", objconexion)
+
+        objcomando.CommandType = CommandType.StoredProcedure
+        objcomando.Parameters.AddWithValue("@Nombre", proveedor.Nombre)
+
+        'objcomando.Parameters.Add("@Nombre", SqlDbType.VarChar)
+        objcomando.Parameters.AddWithValue("@Direccion", proveedor.Direccion)
+
+        objcomando.Parameters.AddWithValue("@Catalogo", proveedor.Catalogo)
+        objcomando.Parameters.AddWithValue("@Email", proveedor.Email)
+        objcomando.Parameters.AddWithValue("@Telefono", proveedor.Telefono)
+        'objcomando.Parameters("@Nombre").Value = proveedor.Nombre
+        'objcomando.Parameters("@Direccion").Value = proveedor.Direccion
+        'objcomando.Parameters("@Catalogo").Value = proveedor.Catalogo
+        'objcomando.Parameters("@Email").Value = proveedor.Email
+        'objcomando.Parameters("@Telefono").Value = proveedor.Telefono
 
         objconexion.Open()
         objcomando.ExecuteNonQuery()
@@ -109,20 +112,25 @@ Public Class proveedores
     Public Sub modificar(ByVal proveedor As proveedores)
         Dim strconexion As String = "Server =CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection = True;"
         Dim objconexion As New SqlConnection(strconexion)
-        Dim strcomando As String = "UPDATE proveedor SET Nombre=@Nombre,Direccion=@Direccion,Catalogo=@Catalogo,Email=@Email,Telefono=@Telefono WHERE Id =@Id"
-        Dim objcomando As New SqlCommand(strcomando, objconexion)
-        objcomando.Parameters.Add("@Id", SqlDbType.Int)
-        objcomando.Parameters.Add("@Nombre", SqlDbType.VarChar)
-        objcomando.Parameters.Add("@Direccion", SqlDbType.VarChar)
-        objcomando.Parameters.Add("@Catalogo", SqlDbType.VarChar)
-        objcomando.Parameters.Add("@Email", SqlDbType.VarChar)
-        objcomando.Parameters.Add("@Telefono", SqlDbType.VarChar)
-        objcomando.Parameters("@Id").Value = proveedor.Id
-        objcomando.Parameters("@Nombre").Value = proveedor.Nombre
-        objcomando.Parameters("@Direccion").Value = proveedor.Direccion
-        objcomando.Parameters("@Catalogo").Value = proveedor.Catalogo
-        objcomando.Parameters("@Email").Value = proveedor.Email
-        objcomando.Parameters("@Telefono").Value = proveedor.Telefono
+        'Dim strcomando As String = "UPDATE proveedor SET Nombre=@Nombre,Direccion=@Direccion,Catalogo=@Catalogo,Email=@Email,Telefono=@Telefono WHERE Id =@Id"
+        Dim objcomando As New SqlCommand("ModificarProveedor", objconexion)
+
+        objcomando.CommandType = CommandType.StoredProcedure
+        objcomando.Parameters.AddWithValue("@Nombre", proveedor.Nombre)
+
+        'objcomando.Parameters.Add("@Id", SqlDbType.Int)
+        'objcomando.Parameters.Add("@Nombre", SqlDbType.VarChar)
+        objcomando.Parameters.AddWithValue("@Direccion", proveedor.Direccion)
+        objcomando.Parameters.AddWithValue("@Catalogo", proveedor.Catalogo)
+        objcomando.Parameters.AddWithValue("@Email", proveedor.Email)
+
+        objcomando.Parameters.AddWithValue("@Telefono", proveedor.Telefono)
+        'objcomando.Parameters("@Id").Value = proveedor.Id
+        'objcomando.Parameters("@Nombre").Value = proveedor.Nombre
+        'objcomando.Parameters("@Direccion").Value = proveedor.Direccion
+        'objcomando.Parameters("@Catalogo").Value = proveedor.Catalogo
+        'objcomando.Parameters("@Email").Value = proveedor.Email
+        'objcomando.Parameters("@Telefono").Value = proveedor.Telefono
 
         objconexion.Open()
         objcomando.ExecuteNonQuery()

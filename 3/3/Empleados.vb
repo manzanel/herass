@@ -71,16 +71,23 @@ Public Class Empleados
     Public Sub insertar(ByVal empleado As empleados)
         Dim strconexion As String = "Server=CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection=True;"
         Dim objconexion As New SqlConnection(strconexion)
-        Dim strcomando As String = "INSERT INTO empleado (Nombre,Telefono,Direccion,Email) values (@Nombre,@Telefono,@Direccion,@Email)"
-        Dim objcomando As New SqlCommand(strcomando, objconexion)
-        objcomando.Parameters.Add("@Nombre", SqlDbType.VarChar)
-        objcomando.Parameters.Add("@Telefono", SqlDbType.Int)
-        objcomando.Parameters.Add("@Direccion", SqlDbType.VarChar)
-        objcomando.Parameters.Add("@Email", SqlDbType.VarChar)
-        objcomando.Parameters("@Nombre").Value = empleado.Nombre
-        objcomando.Parameters("@Telefono").Value = empleado.Telefono
-        objcomando.Parameters("@Direccion").Value = empleado.Direccion
-        objcomando.Parameters("@Email").Value = empleado.Email
+        'Dim strcomando As String = "INSERT INTO empleado (Nombre,Telefono,Direccion,Email) values (@Nombre,@Telefono,@Direccion,@Email)"
+        Dim objcomando As New SqlCommand("InsertarEmpleado", objconexion)
+
+
+        objcomando.CommandType = CommandType.StoredProcedure
+        objcomando.Parameters.AddWithValue("@Nombre", empleado.Nombre)
+
+
+
+        'objcomando.Parameters.Add("@Nombre", SqlDbType.VarChar)
+        objcomando.Parameters.AddWithValue("@Telefono", empleado.Telefono)
+        objcomando.Parameters.AddWithValue("@Direccion", empleado.Direccion)
+        objcomando.Parameters.AddWithValue("@Email", empleado.Email)
+        'objcomando.Parameters("@Nombre").Value = empleado.Nombre
+        'objcomando.Parameters("@Telefono").Value = empleado.Telefono
+        'objcomando.Parameters("@Direccion").Value = empleado.Direccion
+        'objcomando.Parameters("@Email").Value = empleado.Email
 
         objconexion.Open()
         objcomando.ExecuteNonQuery()
@@ -92,18 +99,25 @@ Public Class Empleados
     Public Sub modificar(ByVal empleado As Empleados)
         Dim strconexion As String = "Server=CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection= True;"
         Dim objconexion As New SqlConnection(strconexion)
-        Dim strcomando As String = "UPDATE empleado SET Nombre= @Nombre,Telefono = @Telefono,Direccion = @Direccion, Email=@Email WHERE Id=@Id"
-        Dim objcomando As New SqlCommand(strcomando, objconexion)
-        objcomando.Parameters.Add("@Id", SqlDbType.Int)
-        objcomando.Parameters.Add("@Nombre", SqlDbType.VarChar)
-        objcomando.Parameters.Add("@Telefono", SqlDbType.Int)
-        objcomando.Parameters.Add("@Direccion", SqlDbType.VarChar)
-        objcomando.Parameters.Add("@Email", SqlDbType.VarChar)
-        objcomando.Parameters("@Id").Value = empleado.Id
-        objcomando.Parameters("@Nombre").Value = empleado.Nombre
-        objcomando.Parameters("@Telefono").Value = empleado.Telefono
-        objcomando.Parameters("@Direccion").Value = empleado.Direccion
-        objcomando.Parameters("@Email").Value = empleado.Email
+        'Dim strcomando As String = "UPDATE empleado SET Nombre= @Nombre,Telefono = @Telefono,Direccion = @Direccion, Email=@Email WHERE Id=@Id"
+        Dim objcomando As New SqlCommand("ModificarEmpleado", objconexion)
+
+        objcomando.CommandType = CommandType.StoredProcedure
+        objcomando.Parameters.AddWithValue("@Nombre", empleado.Nombre)
+
+
+
+        'objcomando.Parameters.Add("@Id", SqlDbType.Int)
+        'objcomando.Parameters.Add("@Nombre", SqlDbType.VarChar)
+        objcomando.Parameters.AddWithValue("@Telefono", empleado.Telefono)
+        objcomando.Parameters.AddWithValue("@Direccion", empleado.Direccion)
+        objcomando.Parameters.AddWithValue("@Email", empleado.Email)
+
+        'objcomando.Parameters("@Id").Value = empleado.Id
+        'objcomando.Parameters("@Nombre").Value = empleado.Nombre
+        'objcomando.Parameters("@Telefono").Value = empleado.Telefono
+        'objcomando.Parameters("@Direccion").Value = empleado.Direccion
+        'objcomando.Parameters("@Email").Value = empleado.Email
 
         objconexion.Open()
         objcomando.ExecuteNonQuery()
