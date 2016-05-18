@@ -119,8 +119,7 @@ Public Class clientes
         'objcomando.Parameters.Add("@Id", SqlDbType.Int)
         'objcomando.Parameters.Add("@Nombre", SqlDbType.VarChar)
 
-
-
+        objcomando.Parameters.AddWithValue("@Id", cliente.Id)
         objcomando.Parameters.AddWithValue("@Email", cliente.Email)
         objcomando.Parameters.AddWithValue("@Telefono", cliente.Telefono)
         objcomando.Parameters.AddWithValue("@Direccion", cliente.Direccion)
@@ -141,8 +140,11 @@ Public Class clientes
     Public Sub borrar(ByVal Idcliente As Integer)
         Dim strconexion As String = "Server=CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection= True;"
         Dim objconexion As New SqlConnection(strconexion)
-        Dim strcomando As String = " DELETE cliente WHERE Id=@Id"
-        Dim objcomando As New SqlCommand(strcomando, objconexion)
+        'Dim strcomando As String = " DELETE cliente WHERE Id=@Id"
+
+        Dim objcomando As New SqlCommand("EliminarCliente", objconexion)
+        objcomando.CommandType = CommandType.StoredProcedure
+
         objcomando.Parameters.Add("@Id", SqlDbType.Int)
         objcomando.Parameters("@Id").Value = Idcliente
         objconexion.Open()

@@ -120,11 +120,12 @@ Public Class proveedores
 
         'objcomando.Parameters.Add("@Id", SqlDbType.Int)
         'objcomando.Parameters.Add("@Nombre", SqlDbType.VarChar)
+
         objcomando.Parameters.AddWithValue("@Direccion", proveedor.Direccion)
         objcomando.Parameters.AddWithValue("@Catalogo", proveedor.Catalogo)
         objcomando.Parameters.AddWithValue("@Email", proveedor.Email)
-
         objcomando.Parameters.AddWithValue("@Telefono", proveedor.Telefono)
+        objcomando.Parameters.AddWithValue("@Id", proveedor.Id)
         'objcomando.Parameters("@Id").Value = proveedor.Id
         'objcomando.Parameters("@Nombre").Value = proveedor.Nombre
         'objcomando.Parameters("@Direccion").Value = proveedor.Direccion
@@ -141,12 +142,16 @@ Public Class proveedores
     Public Sub borrar(ByVal Idproveedor As Integer)
         Dim strconexion As String = "Server=CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection =True;"
         Dim objconexion As New SqlConnection(strconexion)
-        Dim strcomando As String = "DELETE proveedor WHERE Id =@Id"
-        Dim objcomand As New SqlCommand(strcomando, objconexion)
-        objcomand.Parameters.Add("@Id", SqlDbType.Int)
-        objcomand.Parameters("@Id").Value = idproveedor
+
+        'Dim strcomando As String = "DELETE proveedor WHERE Id =@Id"
+
+        Dim objcomando As New SqlCommand("EliminarProveedor", objconexion)
+        objcomando.CommandType = CommandType.StoredProcedure
+
+        objcomando.Parameters.Add("@Id", SqlDbType.Int)
+        objcomando.Parameters("@Id").Value = Idproveedor
         objconexion.Open()
-        objcomand.ExecuteNonQuery()
+        objcomando.ExecuteNonQuery()
 
         objconexion.Close()
     End Sub

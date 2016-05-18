@@ -40,18 +40,20 @@ Partial Class frmProducto
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(12, 280)
+        Me.btnAceptar.Location = New System.Drawing.Point(16, 345)
+        Me.btnAceptar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(101, 46)
+        Me.btnAceptar.Size = New System.Drawing.Size(135, 57)
         Me.btnAceptar.TabIndex = 0
         Me.btnAceptar.Text = "ACEPTAR"
         Me.btnAceptar.UseVisualStyleBackColor = True
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(160, 280)
+        Me.btnCancelar.Location = New System.Drawing.Point(213, 345)
+        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(106, 46)
+        Me.btnCancelar.Size = New System.Drawing.Size(141, 57)
         Me.btnCancelar.TabIndex = 1
         Me.btnCancelar.Text = "CANCELAR"
         Me.btnCancelar.UseVisualStyleBackColor = True
@@ -59,106 +61,124 @@ Partial Class frmProducto
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(39, 19)
+        Me.Label1.ForeColor = System.Drawing.Color.Transparent
+        Me.Label1.Location = New System.Drawing.Point(52, 23)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(17, 15)
+        Me.Label1.Size = New System.Drawing.Size(21, 17)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Id"
+        Me.Label1.Text = "ID"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(40, 60)
+        Me.Label2.ForeColor = System.Drawing.Color.Transparent
+        Me.Label2.Location = New System.Drawing.Point(53, 74)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(52, 15)
+        Me.Label2.Size = New System.Drawing.Size(68, 17)
         Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Nombre"
+        Me.Label2.Text = "NOMBRE"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(40, 109)
+        Me.Label3.ForeColor = System.Drawing.Color.Transparent
+        Me.Label3.Location = New System.Drawing.Point(53, 134)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(56, 15)
+        Me.Label3.Size = New System.Drawing.Size(77, 17)
         Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Cantidad"
+        Me.Label3.Text = "CANTIDAD"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(40, 152)
+        Me.Label4.ForeColor = System.Drawing.Color.Transparent
+        Me.Label4.Location = New System.Drawing.Point(53, 187)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(47, 15)
+        Me.Label4.Size = New System.Drawing.Size(60, 17)
         Me.Label4.TabIndex = 5
-        Me.Label4.Text = "Unidad"
+        Me.Label4.Text = "UNIDAD"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(40, 203)
+        Me.Label5.ForeColor = System.Drawing.Color.Transparent
+        Me.Label5.Location = New System.Drawing.Point(53, 250)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(49, 15)
+        Me.Label5.Size = New System.Drawing.Size(57, 17)
         Me.Label5.TabIndex = 6
-        Me.Label5.Text = "Minimo"
+        Me.Label5.Text = "MINIMO"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(40, 240)
+        Me.Label6.ForeColor = System.Drawing.Color.Transparent
+        Me.Label6.Location = New System.Drawing.Point(53, 295)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(42, 15)
+        Me.Label6.Size = New System.Drawing.Size(58, 17)
         Me.Label6.TabIndex = 7
-        Me.Label6.Text = "Apedir"
+        Me.Label6.Text = "APEDIR"
         '
         'txtId
         '
         Me.txtId.Enabled = False
-        Me.txtId.Location = New System.Drawing.Point(132, 12)
+        Me.txtId.Location = New System.Drawing.Point(176, 15)
+        Me.txtId.Margin = New System.Windows.Forms.Padding(4)
         Me.txtId.Name = "txtId"
-        Me.txtId.Size = New System.Drawing.Size(154, 20)
+        Me.txtId.Size = New System.Drawing.Size(204, 22)
         Me.txtId.TabIndex = 8
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(133, 55)
+        Me.txtNombre.Location = New System.Drawing.Point(177, 68)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(153, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(203, 22)
         Me.txtNombre.TabIndex = 9
         '
         'txtCantidad
         '
-        Me.txtCantidad.Location = New System.Drawing.Point(135, 110)
+        Me.txtCantidad.Location = New System.Drawing.Point(180, 135)
+        Me.txtCantidad.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.Size = New System.Drawing.Size(151, 20)
+        Me.txtCantidad.Size = New System.Drawing.Size(200, 22)
         Me.txtCantidad.TabIndex = 10
         '
         'txtUnidad
         '
-        Me.txtUnidad.Location = New System.Drawing.Point(135, 153)
+        Me.txtUnidad.Location = New System.Drawing.Point(180, 188)
+        Me.txtUnidad.Margin = New System.Windows.Forms.Padding(4)
         Me.txtUnidad.Name = "txtUnidad"
-        Me.txtUnidad.Size = New System.Drawing.Size(151, 20)
+        Me.txtUnidad.Size = New System.Drawing.Size(200, 22)
         Me.txtUnidad.TabIndex = 11
         '
         'txtMinimo
         '
-        Me.txtMinimo.Location = New System.Drawing.Point(135, 198)
+        Me.txtMinimo.Location = New System.Drawing.Point(180, 244)
+        Me.txtMinimo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtMinimo.Name = "txtMinimo"
-        Me.txtMinimo.Size = New System.Drawing.Size(151, 20)
+        Me.txtMinimo.Size = New System.Drawing.Size(200, 22)
         Me.txtMinimo.TabIndex = 12
         '
         'txtApedir
         '
-        Me.txtApedir.Location = New System.Drawing.Point(135, 235)
+        Me.txtApedir.Location = New System.Drawing.Point(180, 289)
+        Me.txtApedir.Margin = New System.Windows.Forms.Padding(4)
         Me.txtApedir.Name = "txtApedir"
-        Me.txtApedir.Size = New System.Drawing.Size(151, 20)
+        Me.txtApedir.Size = New System.Drawing.Size(200, 22)
         Me.txtApedir.TabIndex = 13
         '
         'frmProducto
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Orchid
-        Me.ClientSize = New System.Drawing.Size(311, 338)
+        Me.BackColor = System.Drawing.Color.MediumVioletRed
+        Me.ClientSize = New System.Drawing.Size(415, 416)
         Me.Controls.Add(Me.txtApedir)
         Me.Controls.Add(Me.txtMinimo)
         Me.Controls.Add(Me.txtUnidad)
@@ -173,6 +193,7 @@ Partial Class frmProducto
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmProducto"
         Me.Text = "frmProducto"
         Me.ResumeLayout(False)

@@ -36,6 +36,10 @@
         If accion_ = "insertar" Then
             proveedor.insertar(proveedor)
 
+        Else
+            proveedor.Id = txtId.Text
+            proveedor.modificar(proveedor)
+
         End If
         proveedor.ConsultarTodos(lstProveedores.dgvProveedores)
         Me.Close()
@@ -51,9 +55,10 @@
             txtDireccion.Text = ""
             txtCatalogo.Text = ""
             txtEmail.Text = ""
+
             txtTelefono.Text = ""
         Else
-            Me.Text = "modificar proveedor "
+            Me.Text = "modificar proveedor"
             txtId.Text = proveedor.Id
             txtNombre.Text = proveedor.Nombre
             txtDireccion.Text = proveedor.Direccion

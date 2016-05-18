@@ -111,7 +111,7 @@ Public Class Productos
         Dim strconexion As String = "Server= CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection= True;"
         Dim objconexion As New SqlConnection(strconexion)
         'Dim strcomando As String = "UPDATE productos SET Nombre=@Nombre,Cantidad=@Cantidad,Unidad=@Unidad, Minimo =@Minimo, Apedir= @Apedir WHERE Id=@Id"
-        Dim objcomando As New SqlCommand("ModificarProducto", objconexion)
+        Dim objcomando As New SqlCommand("ModificarProductos", objconexion)
 
         objcomando.CommandType = CommandType.StoredProcedure
         objcomando.Parameters.AddWithValue("@Nombre", producto.Nombre)
@@ -127,6 +127,8 @@ Public Class Productos
         objcomando.Parameters.AddWithValue("@Unidad", producto.Unidad)
         objcomando.Parameters.AddWithValue("@Minimo", producto.Minimo)
         objcomando.Parameters.AddWithValue("@Apedir", producto.Apedir)
+        objcomando.Parameters.AddWithValue("@Id",producto.Id)
+
         'objcomando.Parameters("@Id").Value = producto.Id
         'objcomando.Parameters("@Nombre").Value = producto.Nombre
         'objcomando.Parameters("@Cantidad").Value = producto.Cantidad
@@ -143,12 +145,15 @@ Public Class Productos
     Public Sub borrar(ByVal Idproducto As Integer)
         Dim strconexion As String = "Server=CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_connection =True;"
         Dim objconexion As New SqlConnection(strconexion)
-        Dim strcomando As String = "DELETE productos WHERE Id =@Id"
-        Dim objcomand As New SqlCommand(strcomando, objconexion)
-        objcomand.Parameters.Add("@Id", SqlDbType.Int)
-        objcomand.Parameters("@Id").Value = idproducto
+        'Dim strcomando As String = "DELETE productos WHERE Id =@Id"
+       
+        Dim objcomando As New SqlCommand("EliminarProducto", objconexion)
+        objcomando.CommandType = CommandType.StoredProcedure
+
+        objcomando.Parameters.Add("@Id", SqlDbType.Int)
+        objcomando.Parameters("@Id").Value = Idproducto
         objconexion.Open()
-        objcomand.ExecuteNonQuery()
+        objcomando.ExecuteNonQuery()
 
         objconexion.Close()
 

@@ -3,6 +3,7 @@
 
     Private Sub lstProveedores_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         proveedor.ConsultarTodos(dgvProveedores)
+        Form2.Enabled = False
 
     End Sub
 
@@ -28,13 +29,13 @@
 
         frmProveedor.accion = "modificar"
         frmProveedor.proveedor = proveedor
-        frmProducto.ShowDialog()
+        frmProveedor.ShowDialog()
 
     End Sub
 
 
     Private Sub btnBorrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBorrar.Click
-        Dim mensaje As DialogResult = MessageBox.Show("QUIERE BORRAR CLIENTE")
+        Dim mensaje As DialogResult = MessageBox.Show("¿QUIERE BORRAR?")
         If mensaje = Windows.Forms.DialogResult.OK Then
             proveedor.borrar(dgvProveedores.Item("id", dgvProveedores.CurrentRow.Index).Value)
 

@@ -33,59 +33,66 @@ Partial Class lstClientes
         'dgvClientes
         '
         Me.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvClientes.Location = New System.Drawing.Point(26, 12)
+        Me.dgvClientes.Location = New System.Drawing.Point(35, 15)
+        Me.dgvClientes.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvClientes.Name = "dgvClientes"
+        Me.dgvClientes.RowTemplate.Height = 24
         Me.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvClientes.Size = New System.Drawing.Size(435, 149)
+        Me.dgvClientes.Size = New System.Drawing.Size(586, 183)
         Me.dgvClientes.TabIndex = 0
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(35, 196)
+        Me.btnAgregar.Location = New System.Drawing.Point(35, 219)
+        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(84, 43)
+        Me.btnAgregar.Size = New System.Drawing.Size(112, 49)
         Me.btnAgregar.TabIndex = 1
         Me.btnAgregar.Text = "AGREGAR"
         Me.btnAgregar.UseVisualStyleBackColor = True
         '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(138, 202)
+        Me.btnModificar.Location = New System.Drawing.Point(176, 219)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(98, 37)
+        Me.btnModificar.Size = New System.Drawing.Size(131, 46)
         Me.btnModificar.TabIndex = 2
         Me.btnModificar.Text = "MODIFICAR"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
         'btnBorrar
         '
-        Me.btnBorrar.Location = New System.Drawing.Point(286, 202)
+        Me.btnBorrar.Location = New System.Drawing.Point(338, 219)
+        Me.btnBorrar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBorrar.Name = "btnBorrar"
-        Me.btnBorrar.Size = New System.Drawing.Size(75, 37)
+        Me.btnBorrar.Size = New System.Drawing.Size(100, 46)
         Me.btnBorrar.TabIndex = 3
         Me.btnBorrar.Text = "BORRAR"
         Me.btnBorrar.UseVisualStyleBackColor = True
         '
         'btnSalir
         '
-        Me.btnSalir.Location = New System.Drawing.Point(388, 202)
+        Me.btnSalir.Location = New System.Drawing.Point(481, 219)
+        Me.btnSalir.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(89, 37)
+        Me.btnSalir.Size = New System.Drawing.Size(119, 46)
         Me.btnSalir.TabIndex = 4
         Me.btnSalir.Text = "SALIR"
         Me.btnSalir.UseVisualStyleBackColor = True
         '
         'lstClientes
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.DarkOrchid
-        Me.ClientSize = New System.Drawing.Size(499, 259)
+        Me.BackColor = System.Drawing.Color.MediumVioletRed
+        Me.ClientSize = New System.Drawing.Size(652, 291)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnBorrar)
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.dgvClientes)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "lstClientes"
         Me.Text = "clientes"
         CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).EndInit()

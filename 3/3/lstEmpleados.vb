@@ -3,7 +3,7 @@
     Dim empleado As New Empleados
     Private Sub lstEmpleados_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         empleado.ConsultarTodos(dgvEmpleados)
-
+        Form2.Enabled = False
 
     End Sub
 
@@ -33,7 +33,7 @@
     End Sub
 
     Private Sub btnBorrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBorrar.Click
-        Dim mensaje As DialogResult = MessageBox.Show("¿ quiere borrar?")
+        Dim mensaje As DialogResult = MessageBox.Show("¿ QUIERE BORRAR?")
         If mensaje = Windows.Forms.DialogResult.OK Then
             empleado.borrar(dgvEmpleados.Item("id", dgvEmpleados.CurrentRow.Index).Value)
             empleado.ConsultarTodos(dgvEmpleados)

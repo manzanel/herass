@@ -3,6 +3,7 @@
 
     Private Sub lstProductos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         producto.ConsultarTodos(dgvProductos)
+        Form2.Enabled = False
 
 
     End Sub
@@ -41,7 +42,7 @@
 
 
     Private Sub btnBorrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBorrar.Click
-        Dim mensaje As DialogResult = MessageBox.Show("¿quiere borrar?")
+        Dim mensaje As DialogResult = MessageBox.Show("¿QUIERE BORRAR?")
         If mensaje = Windows.Forms.DialogResult.OK Then
             producto.borrar(dgvProductos.Item("id", dgvProductos.CurrentRow.Index).Value)
             producto.ConsultarTodos(dgvProductos)
@@ -49,4 +50,6 @@
         End If
 
     End Sub
+
+    
 End Class
