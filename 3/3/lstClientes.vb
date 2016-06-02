@@ -5,7 +5,6 @@
 
     Private Sub lstClientes_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         cliente.ConsultarTodos(dgvClientes)
-        Form2.Enabled = False
 
     End Sub
 
@@ -20,32 +19,35 @@
 
     End Sub
 
-
-    Private Sub dgvClientes_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvClientes.CellContentClick
+    Private Sub dgvClientes_CellDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvClientes.CellDoubleClick
         cliente.Id = dgvClientes.Item("Id", dgvClientes.CurrentRow.Index).Value
         cliente.Nombre = dgvClientes.Item("Nombre", dgvClientes.CurrentRow.Index).Value
         cliente.Email = dgvClientes.Item("Email", dgvClientes.CurrentRow.Index).Value
         cliente.Telefono = dgvClientes.Item("Telefono", dgvClientes.CurrentRow.Index).Value
         cliente.Direccion = dgvClientes.Item("Direccion", dgvClientes.CurrentRow.Index).Value
+        cliente.IdProvincia = dgvClientes.Item("IdProvincia", dgvClientes.CurrentRow.Index).Value
         frmCliente.accion = "modificar"
         frmCliente.cliente = cliente
         frmCliente.ShowDialog()
 
 
+
     End Sub
 
 
+
+
     Private Sub btnBorrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBorrar.Click
-        Dim mensaje As DialogResult = MessageBox.Show("¿QUIERE BORRAR")
-
-
+        Dim mensaje As DialogResult = MessageBox.Show("¿quiere borrar")
         If mensaje = Windows.Forms.DialogResult.OK Then
-       
-
             cliente.borrar(dgvClientes.Item("Id", dgvClientes.CurrentRow.Index).Value)
 
             cliente.ConsultarTodos(dgvClientes)
 
         End If
     End Sub
+
+
+
+
 End Class

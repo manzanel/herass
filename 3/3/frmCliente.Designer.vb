@@ -34,6 +34,8 @@ Partial Class frmCliente
         Me.txtDireccion = New System.Windows.Forms.TextBox
         Me.btnAceptar = New System.Windows.Forms.Button
         Me.btnCancelar = New System.Windows.Forms.Button
+        Me.Label6 = New System.Windows.Forms.Label
+        Me.ProvinciaCombo = New System.Windows.Forms.ComboBox
         Me.SuspendLayout()
         '
         'Label1
@@ -152,12 +154,32 @@ Partial Class frmCliente
         Me.btnCancelar.Text = "CANCELAR"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(16, 225)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(90, 17)
+        Me.Label6.TabIndex = 12
+        Me.Label6.Text = "PROVINCIAS"
+        '
+        'ProvinciaCombo
+        '
+        Me.ProvinciaCombo.FormattingEnabled = True
+        Me.ProvinciaCombo.Location = New System.Drawing.Point(108, 222)
+        Me.ProvinciaCombo.Name = "ProvinciaCombo"
+        Me.ProvinciaCombo.Size = New System.Drawing.Size(181, 24)
+        Me.ProvinciaCombo.TabIndex = 13
+        '
         'frmCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.MediumVioletRed
         Me.ClientSize = New System.Drawing.Size(337, 336)
+        Me.Controls.Add(Me.ProvinciaCombo)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.txtDireccion)
@@ -189,4 +211,6 @@ Partial Class frmCliente
     Friend WithEvents txtDireccion As System.Windows.Forms.TextBox
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents ProvinciaCombo As System.Windows.Forms.ComboBox
 End Class

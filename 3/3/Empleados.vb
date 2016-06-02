@@ -5,6 +5,7 @@ Imports System.Data.SqlClient
 
 
 Public Class Empleados
+    Inherits conexion
     Private Id_ As Integer
     Private Nombre_ As String
     Private Telefono_ As Integer
@@ -68,10 +69,11 @@ Public Class Empleados
         objconexion.Close()
 
     End Sub
-    Public Sub insertar(ByVal empleado As empleados)
-        Dim strconexion As String = "Server=CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection=True;"
-        Dim objconexion As New SqlConnection(strconexion)
-        'Dim strcomando As String = "INSERT INTO empleado (Nombre,Telefono,Direccion,Email) values (@Nombre,@Telefono,@Direccion,@Email)"
+    Public Sub insertar(ByVal empleado As Empleados)
+        Abrir()
+        'Dim strconexion As String = "Server=CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection=True;"
+        'Dim objconexion As New SqlConnection(strconexion)
+        ''Dim strcomando As String = "INSERT INTO empleado (Nombre,Telefono,Direccion,Email) values (@Nombre,@Telefono,@Direccion,@Email)"
         Dim objcomando As New SqlCommand("InsertarEmpleado", objconexion)
 
 
@@ -89,16 +91,17 @@ Public Class Empleados
         'objcomando.Parameters("@Direccion").Value = empleado.Direccion
         'objcomando.Parameters("@Email").Value = empleado.Email
 
-        objconexion.Open()
-        objcomando.ExecuteNonQuery()
-        objconexion.Close()
 
+        objcomando.ExecuteNonQuery()
+
+        Cerrar()
 
 
     End Sub
     Public Sub modificar(ByVal empleado As Empleados)
-        Dim strconexion As String = "Server=CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection= True;"
-        Dim objconexion As New SqlConnection(strconexion)
+        Abrir()
+        'Dim strconexion As String = "Server=CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection= True;"
+        'Dim objconexion As New SqlConnection(strconexion)
         'Dim strcomando As String = "UPDATE empleado SET Nombre= @Nombre,Telefono = @Telefono,Direccion = @Direccion, Email=@Email WHERE Id=@Id"
         Dim objcomando As New SqlCommand("ModificarEmpleado", objconexion)
 
@@ -113,7 +116,7 @@ Public Class Empleados
         objcomando.Parameters.AddWithValue("@Direccion", empleado.Direccion)
         objcomando.Parameters.AddWithValue("@Email", empleado.Email)
 
-        objcomando.Parameters.AddWithValue("@Id",empleado.Id)
+        objcomando.Parameters.AddWithValue("@Id", empleado.Id)
 
         'objcomando.Parameters("@Id").Value = empleado.Id
         'objcomando.Parameters("@Nombre").Value = empleado.Nombre
@@ -121,26 +124,25 @@ Public Class Empleados
         'objcomando.Parameters("@Direccion").Value = empleado.Direccion
         'objcomando.Parameters("@Email").Value = empleado.Email
 
-        objconexion.Open()
-        objcomando.ExecuteNonQuery()
-        objconexion.Close()
 
+        objcomando.ExecuteNonQuery()
+
+        Cerrar()
     End Sub
 
     Public Sub borrar(ByVal Idempleado As Integer)
-        Dim strconexion As String = "Server=CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection= True;"
-        Dim objconexion As New SqlConnection(strconexion)
+        Abrir()
+        'Dim strconexion As String = "Server=CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection= True;"
+        'Dim objconexion As New SqlConnection(strconexion)
         'Dim strcomando As String = " DELETE empleado WHERE Id=@Id"
 
         Dim objcomando As New SqlCommand("EliminarEmpleado", objconexion)
         objcomando.CommandType = CommandType.StoredProcedure
-
         objcomando.Parameters.Add("@Id", SqlDbType.Int)
         objcomando.Parameters("@Id").Value = Idempleado
-        objconexion.Open()
         objcomando.ExecuteNonQuery()
-        objconexion.Close()
 
+        Cerrar()
     End Sub
 End Class
 

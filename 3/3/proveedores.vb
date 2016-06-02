@@ -5,6 +5,7 @@ Imports System.Data.SqlClient
 
 
 Public Class proveedores
+    Inherits conexion
     Private Id_ As Integer
     Private Nombre_ As String
     Private Direccion_ As String
@@ -82,8 +83,9 @@ Public Class proveedores
     End Sub
 
     Public Sub insertar(ByVal proveedor As proveedores)
-        Dim strconexion As String = "Server=CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection= True;"
-        Dim objconexion As New SqlConnection(strconexion)
+        Abrir()
+        'Dim strconexion As String = "Server=CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection= True;"
+        'Dim objconexion As New SqlConnection(strconexion)
         'Dim strcomando As String = "INSERT INTO proveedor (Nombre,Direccion,Catalogo,Email,Telefono) VALUES (@Nombre,@Direccion,@Catalogo,@Email,@Telefono)"
         Dim objcomando As New SqlCommand("InsertarProveedor", objconexion)
 
@@ -102,16 +104,17 @@ Public Class proveedores
         'objcomando.Parameters("@Email").Value = proveedor.Email
         'objcomando.Parameters("@Telefono").Value = proveedor.Telefono
 
-        objconexion.Open()
+
         objcomando.ExecuteNonQuery()
-        objconexion.Close()
+        Cerrar()
 
 
 
     End Sub
     Public Sub modificar(ByVal proveedor As proveedores)
-        Dim strconexion As String = "Server =CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection = True;"
-        Dim objconexion As New SqlConnection(strconexion)
+        Abrir()
+        'Dim strconexion As String = "Server =CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection = True;"
+        'Dim objconexion As New SqlConnection(strconexion)
         'Dim strcomando As String = "UPDATE proveedor SET Nombre=@Nombre,Direccion=@Direccion,Catalogo=@Catalogo,Email=@Email,Telefono=@Telefono WHERE Id =@Id"
         Dim objcomando As New SqlCommand("ModificarProveedor", objconexion)
 
@@ -133,16 +136,15 @@ Public Class proveedores
         'objcomando.Parameters("@Email").Value = proveedor.Email
         'objcomando.Parameters("@Telefono").Value = proveedor.Telefono
 
-        objconexion.Open()
+
         objcomando.ExecuteNonQuery()
-        objconexion.Close()
+        Cerrar()
 
     End Sub
 
     Public Sub borrar(ByVal Idproveedor As Integer)
-        Dim strconexion As String = "Server=CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection =True;"
-        Dim objconexion As New SqlConnection(strconexion)
-
+        'Dim strconexion As String = "Server=CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection =True;"
+        'Dim objconexion As New SqlConnection(strconexion)
         'Dim strcomando As String = "DELETE proveedor WHERE Id =@Id"
 
         Dim objcomando As New SqlCommand("EliminarProveedor", objconexion)
@@ -150,9 +152,8 @@ Public Class proveedores
 
         objcomando.Parameters.Add("@Id", SqlDbType.Int)
         objcomando.Parameters("@Id").Value = Idproveedor
-        objconexion.Open()
         objcomando.ExecuteNonQuery()
+        Cerrar()
 
-        objconexion.Close()
     End Sub
 End Class

@@ -38,7 +38,7 @@ Partial Class lstClientes
         Me.dgvClientes.Name = "dgvClientes"
         Me.dgvClientes.RowTemplate.Height = 24
         Me.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvClientes.Size = New System.Drawing.Size(586, 183)
+        Me.dgvClientes.Size = New System.Drawing.Size(666, 183)
         Me.dgvClientes.TabIndex = 0
         '
         'btnAgregar
@@ -53,7 +53,7 @@ Partial Class lstClientes
         '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(176, 219)
+        Me.btnModificar.Location = New System.Drawing.Point(197, 220)
         Me.btnModificar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(131, 46)
@@ -63,7 +63,7 @@ Partial Class lstClientes
         '
         'btnBorrar
         '
-        Me.btnBorrar.Location = New System.Drawing.Point(338, 219)
+        Me.btnBorrar.Location = New System.Drawing.Point(382, 219)
         Me.btnBorrar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBorrar.Name = "btnBorrar"
         Me.btnBorrar.Size = New System.Drawing.Size(100, 46)
@@ -73,7 +73,7 @@ Partial Class lstClientes
         '
         'btnSalir
         '
-        Me.btnSalir.Location = New System.Drawing.Point(481, 219)
+        Me.btnSalir.Location = New System.Drawing.Point(538, 219)
         Me.btnSalir.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(119, 46)
@@ -86,7 +86,7 @@ Partial Class lstClientes
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.MediumVioletRed
-        Me.ClientSize = New System.Drawing.Size(652, 291)
+        Me.ClientSize = New System.Drawing.Size(739, 291)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnBorrar)
         Me.Controls.Add(Me.btnModificar)

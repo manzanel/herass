@@ -25,24 +25,21 @@ Public Class conexion
         End Set
     End Property
 
-    Public Sub abrir()
-        strconexion_ = "server=CI7427EA91ADCA\SQLEXPRESS; Database = DistribuidoraHerass; Trusted_Connection=True;"
-        Dim objconexion As New SqlConnection
-        objconexion.Open()
 
-
-
+    Public Sub Abrir()
+        Try
+            strconexion_ = "Server= CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection= True;"
+            objConexion_ = New SqlConnection(strConexion)
+            objConexion_.Open()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
-    Public Sub salir()
-        strconexion_ = "server=CI7427EA91ADCA\SQLEXPRESS; Database = DistribuidoraHerass; Trusted_Connection=True;"
-        Dim objconexion As New SqlConnection
-        objconexion.Close()
-
-
+    Public Sub Cerrar()
+        If Data.ConnectionState.Open Then
+            objConexion_.Close()
+        End If
     End Sub
-
-
-
-
 
 End Class
+

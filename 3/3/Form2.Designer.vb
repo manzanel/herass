@@ -28,7 +28,7 @@ Partial Class Form2
         Me.LstProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.LstProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.LstClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.Button1 = New System.Windows.Forms.Button
+        Me.SALIRToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -45,52 +45,55 @@ Partial Class Form2
         'TABLASToolStripMenuItem
         '
         Me.TABLASToolStripMenuItem.BackColor = System.Drawing.Color.LawnGreen
-        Me.TABLASToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LstEmpleadosToolStripMenuItem, Me.LstProveedoresToolStripMenuItem, Me.LstProductosToolStripMenuItem, Me.LstClientesToolStripMenuItem})
+        Me.TABLASToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LstEmpleadosToolStripMenuItem, Me.LstProveedoresToolStripMenuItem, Me.LstProductosToolStripMenuItem, Me.LstClientesToolStripMenuItem, Me.SALIRToolStripMenuItem})
+        Me.TABLASToolStripMenuItem.Image = Global.WindowsApplication1.My.Resources.Resources.IMG_20150617_123706132_HDR___copia
         Me.TABLASToolStripMenuItem.Name = "TABLASToolStripMenuItem"
-        Me.TABLASToolStripMenuItem.Size = New System.Drawing.Size(73, 24)
+        Me.TABLASToolStripMenuItem.Size = New System.Drawing.Size(89, 24)
         Me.TABLASToolStripMenuItem.Text = "TABLAS"
         '
         'LstEmpleadosToolStripMenuItem
         '
+        Me.LstEmpleadosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.LstEmpleadosToolStripMenuItem.Name = "LstEmpleadosToolStripMenuItem"
         Me.LstEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
         Me.LstEmpleadosToolStripMenuItem.Text = "lstEmpleados"
         '
         'LstProveedoresToolStripMenuItem
         '
+        Me.LstProveedoresToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.LstProveedoresToolStripMenuItem.Name = "LstProveedoresToolStripMenuItem"
         Me.LstProveedoresToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
         Me.LstProveedoresToolStripMenuItem.Text = "lstProveedores"
         '
         'LstProductosToolStripMenuItem
         '
+        Me.LstProductosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.LstProductosToolStripMenuItem.Name = "LstProductosToolStripMenuItem"
         Me.LstProductosToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
         Me.LstProductosToolStripMenuItem.Text = "lstProductos"
         '
         'LstClientesToolStripMenuItem
         '
+        Me.LstClientesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.LstClientesToolStripMenuItem.Name = "LstClientesToolStripMenuItem"
         Me.LstClientesToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
         Me.LstClientesToolStripMenuItem.Text = "lstClientes"
         '
-        'Button1
+        'SALIRToolStripMenuItem
         '
-        Me.Button1.BackColor = System.Drawing.Color.DarkKhaki
-        Me.Button1.Location = New System.Drawing.Point(744, 358)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(114, 52)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "CERRAR"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.SALIRToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.SALIRToolStripMenuItem.Name = "SALIRToolStripMenuItem"
+        Me.SALIRToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
+        Me.SALIRToolStripMenuItem.Text = "SALIR"
         '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Brown
+        Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.IMG_20150617_123706132_HDR___copia
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(980, 460)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -108,5 +111,5 @@ Partial Class Form2
     Friend WithEvents LstProveedoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LstProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LstClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents SALIRToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

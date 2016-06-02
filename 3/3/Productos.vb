@@ -3,6 +3,7 @@ Imports System.Data
 Imports System.Data.SqlClient
 
 Public Class Productos
+    Inherits conexion
     Private Id_ As Integer
     Private Nombre_ As String
     Private Cantidad_ As String
@@ -81,9 +82,10 @@ Public Class Productos
 
 
     End Sub
-    Public Sub insertar(ByVal producto As productos)
-        Dim strconexion As String = "Server= CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection=true;"
-        Dim objconexion As New SqlConnection(strconexion)
+    Public Sub insertar(ByVal producto As Productos)
+        Abrir()
+        'Dim strconexion As String = "Server= CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection=true;"
+        'Dim objconexion As New SqlConnection(strconexion)
         'Dim strcomando As String = "INSERT INTO productos (Nombre,Cantidad,Unidad,Minimo,Apedir)  VALUES (@Nombre,@Cantidad,@Unidad, @Minimo,@Apedir) "
         Dim objcomando As New SqlCommand("InsertarProducto", objconexion)
 
@@ -102,14 +104,15 @@ Public Class Productos
         'objcomando.Parameters("@Minimo").Value = producto.Minimo
         'objcomando.Parameters("@Apedir").Value = producto.Apedir
 
-        objconexion.Open()
+
         objcomando.ExecuteNonQuery()
-        objconexion.Close()
+        Cerrar()
 
     End Sub
     Public Sub modificar(ByVal producto As Productos)
-        Dim strconexion As String = "Server= CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection= True;"
-        Dim objconexion As New SqlConnection(strconexion)
+        Abrir()
+        'Dim strconexion As String = "Server= CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_Connection= True;"
+        'Dim objconexion As New SqlConnection(strconexion)
         'Dim strcomando As String = "UPDATE productos SET Nombre=@Nombre,Cantidad=@Cantidad,Unidad=@Unidad, Minimo =@Minimo, Apedir= @Apedir WHERE Id=@Id"
         Dim objcomando As New SqlCommand("ModificarProductos", objconexion)
 
@@ -127,7 +130,7 @@ Public Class Productos
         objcomando.Parameters.AddWithValue("@Unidad", producto.Unidad)
         objcomando.Parameters.AddWithValue("@Minimo", producto.Minimo)
         objcomando.Parameters.AddWithValue("@Apedir", producto.Apedir)
-        objcomando.Parameters.AddWithValue("@Id",producto.Id)
+        objcomando.Parameters.AddWithValue("@Id", producto.Id)
 
         'objcomando.Parameters("@Id").Value = producto.Id
         'objcomando.Parameters("@Nombre").Value = producto.Nombre
@@ -136,26 +139,26 @@ Public Class Productos
         'objcomando.Parameters("@Minimo").Value = producto.Minimo
         'objcomando.Parameters("@Apedir").Value = producto.Apedir
 
-        objconexion.Open()
+
         objcomando.ExecuteNonQuery()
-        objconexion.Close()
+        Cerrar()
 
     End Sub
 
     Public Sub borrar(ByVal Idproducto As Integer)
-        Dim strconexion As String = "Server=CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_connection =True;"
-        Dim objconexion As New SqlConnection(strconexion)
+        Abrir()
+        'Dim strconexion As String = "Server=CI7427EA91ADCA\SQLEXPRESS;Database=DistribuidoraHerass;Trusted_connection =True;"
+        'Dim objconexion As New SqlConnection(strconexion)
         'Dim strcomando As String = "DELETE productos WHERE Id =@Id"
-       
+
         Dim objcomando As New SqlCommand("EliminarProducto", objconexion)
         objcomando.CommandType = CommandType.StoredProcedure
-
         objcomando.Parameters.Add("@Id", SqlDbType.Int)
         objcomando.Parameters("@Id").Value = Idproducto
-        objconexion.Open()
         objcomando.ExecuteNonQuery()
 
-        objconexion.Close()
+        Cerrar()
+
 
     End Sub
 

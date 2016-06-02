@@ -1,6 +1,7 @@
 ﻿Public Class frmCliente
     Private accion_ As String
     Private cliente_ As New clientes
+    Private Provincia As New Provincias
     Public Property accion() As String
         Get
             Return accion_
@@ -17,7 +18,10 @@
             cliente_ = value
 
         End Set
+
+
     End Property
+
 
 
     Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
@@ -28,8 +32,9 @@
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
         cliente.Nombre = txtNombre.Text
         cliente.Email = txtEmail.Text
-        cliente.Telefono = txtEmail.Text
+        cliente.Telefono = txtTelefono.Text
         cliente.Direccion = txtDireccion.Text
+        cliente.IdProvincia = ProvinciaCombo.SelectedValue
         If accion_ = "insertar" Then
             cliente.insertar(cliente)
         Else
@@ -37,12 +42,15 @@
             cliente.modificar(cliente)
 
         End If
+
         cliente.ConsultarTodos(lstClientes.dgvClientes)
         Me.Close()
 
     End Sub
 
     Private Sub frmCliente_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Provincia.CargarComboProvincias(ProvinciaCombo)
+
         If accion_ = "insertar" Then
             Me.Text = "agregar cliente"
             txtNombre.Text = ""
@@ -56,7 +64,22 @@
             txtEmail.Text = cliente.Email
             txtTelefono.Text = cliente.Telefono
             txtDireccion.Text = cliente.Direccion
+            ProvinciaCombo.SelectedValue = cliente.IdProvincia
+
+
+
+
+
 
         End If
+
+
+
+
     End Sub
+
+
+
+
+
 End Class
