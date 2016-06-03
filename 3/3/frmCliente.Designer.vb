@@ -166,6 +166,7 @@ Partial Class frmCliente
         '
         'ProvinciaCombo
         '
+        Me.ProvinciaCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ProvinciaCombo.FormattingEnabled = True
         Me.ProvinciaCombo.Location = New System.Drawing.Point(108, 222)
         Me.ProvinciaCombo.Name = "ProvinciaCombo"

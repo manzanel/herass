@@ -67,25 +67,7 @@ Public Class Provincias
             Dim objDataAdapter As New SqlDataAdapter(objComando)
             objDataAdapter.Fill(objDataTable)
 
-            'Dim objDataSet As New DataSet
-            'objDataAdapter.Fill(objDataSet, "Provincias")
-            'Dim objDataTable As New Data.DataTable
-            'objDataTable.Columns.Add("id", GetType(Integer))
-            'objDataTable.Columns.Add("nombre", GetType(String))
-
-
-
-            Dim drDsRow As DataRow
-            Dim drNewRow As DataRow
-            Dim indice As Integer = 0
-
-            For Each drDsRow In objDataTable.Rows   'objDataSet.Tables("Provincias").Rows
-                drNewRow = objDataTable.NewRow
-                drNewRow("id") = drDsRow("id")
-                drNewRow("nombre") = drDsRow("nombre")
-                objDataTable.Rows.Add(drNewRow)
-                indice += 1
-            Next
+          
             With comboActual
                 .DataSource = objDataTable
                 .DisplayMember = "nombre"

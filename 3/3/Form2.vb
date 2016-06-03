@@ -27,12 +27,9 @@
     End Sub
 
    
-
-   
-
     
-
-    Private Sub SALIRToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SALIRToolStripMenuItem.Click
-        Me.Close()
+    
+    Private Sub FrmFacturaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FrmFacturaToolStripMenuItem.Click
+        Factura.Show()
     End Sub
 End Class

@@ -42,7 +42,7 @@ Partial Class frmProveedor
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(53, 11)
+        Me.Label1.Location = New System.Drawing.Point(80, 18)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(21, 17)
@@ -107,7 +107,7 @@ Partial Class frmProveedor
         'txtId
         '
         Me.txtId.Enabled = False
-        Me.txtId.Location = New System.Drawing.Point(171, 5)
+        Me.txtId.Location = New System.Drawing.Point(171, 13)
         Me.txtId.Margin = New System.Windows.Forms.Padding(4)
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(216, 22)

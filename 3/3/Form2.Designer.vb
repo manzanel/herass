@@ -28,7 +28,7 @@ Partial Class Form2
         Me.LstProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.LstProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.LstClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.SALIRToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.FrmFacturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -45,7 +45,7 @@ Partial Class Form2
         'TABLASToolStripMenuItem
         '
         Me.TABLASToolStripMenuItem.BackColor = System.Drawing.Color.LawnGreen
-        Me.TABLASToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LstEmpleadosToolStripMenuItem, Me.LstProveedoresToolStripMenuItem, Me.LstProductosToolStripMenuItem, Me.LstClientesToolStripMenuItem, Me.SALIRToolStripMenuItem})
+        Me.TABLASToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LstEmpleadosToolStripMenuItem, Me.LstProveedoresToolStripMenuItem, Me.LstProductosToolStripMenuItem, Me.LstClientesToolStripMenuItem, Me.FrmFacturaToolStripMenuItem})
         Me.TABLASToolStripMenuItem.Image = Global.WindowsApplication1.My.Resources.Resources.IMG_20150617_123706132_HDR___copia
         Me.TABLASToolStripMenuItem.Name = "TABLASToolStripMenuItem"
         Me.TABLASToolStripMenuItem.Size = New System.Drawing.Size(89, 24)
@@ -53,38 +53,40 @@ Partial Class Form2
         '
         'LstEmpleadosToolStripMenuItem
         '
-        Me.LstEmpleadosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.LstEmpleadosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.LstEmpleadosToolStripMenuItem.Name = "LstEmpleadosToolStripMenuItem"
-        Me.LstEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
+        Me.LstEmpleadosToolStripMenuItem.Padding = New System.Windows.Forms.Padding(0, 4, 0, 4)
+        Me.LstEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(175, 30)
         Me.LstEmpleadosToolStripMenuItem.Text = "lstEmpleados"
         '
         'LstProveedoresToolStripMenuItem
         '
-        Me.LstProveedoresToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.LstProveedoresToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.LstProveedoresToolStripMenuItem.Name = "LstProveedoresToolStripMenuItem"
-        Me.LstProveedoresToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
+        Me.LstProveedoresToolStripMenuItem.Padding = New System.Windows.Forms.Padding(0, 4, 0, 4)
+        Me.LstProveedoresToolStripMenuItem.Size = New System.Drawing.Size(175, 30)
         Me.LstProveedoresToolStripMenuItem.Text = "lstProveedores"
         '
         'LstProductosToolStripMenuItem
         '
-        Me.LstProductosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.LstProductosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.LstProductosToolStripMenuItem.Name = "LstProductosToolStripMenuItem"
-        Me.LstProductosToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
+        Me.LstProductosToolStripMenuItem.Padding = New System.Windows.Forms.Padding(0, 4, 0, 4)
+        Me.LstProductosToolStripMenuItem.Size = New System.Drawing.Size(175, 30)
         Me.LstProductosToolStripMenuItem.Text = "lstProductos"
         '
         'LstClientesToolStripMenuItem
         '
-        Me.LstClientesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.LstClientesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.LstClientesToolStripMenuItem.Name = "LstClientesToolStripMenuItem"
         Me.LstClientesToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
         Me.LstClientesToolStripMenuItem.Text = "lstClientes"
         '
-        'SALIRToolStripMenuItem
+        'FrmFacturaToolStripMenuItem
         '
-        Me.SALIRToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.SALIRToolStripMenuItem.Name = "SALIRToolStripMenuItem"
-        Me.SALIRToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
-        Me.SALIRToolStripMenuItem.Text = "SALIR"
+        Me.FrmFacturaToolStripMenuItem.Name = "FrmFacturaToolStripMenuItem"
+        Me.FrmFacturaToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
+        Me.FrmFacturaToolStripMenuItem.Text = "Factura"
         '
         'Form2
         '
@@ -111,5 +113,5 @@ Partial Class Form2
     Friend WithEvents LstProveedoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LstProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LstClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents SALIRToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents FrmFacturaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
