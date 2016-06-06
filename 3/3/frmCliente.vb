@@ -49,7 +49,10 @@
     End Sub
 
     Private Sub frmCliente_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
         Provincia.CargarComboProvincias(ProvinciaCombo)
+
+
 
         If accion_ = "insertar" Then
             Me.Text = "agregar cliente"

@@ -44,7 +44,7 @@ Public Class Provincias
                 drNewRow("id") = drDsRow("id")
                 drNewRow("nombre") = drDsRow("nombre")
                 objDataTable.Rows.Add(drNewRow)
-                indice += 1
+                indice += 0
             Next
             With comboActual
                 .DataSource = objDataTable
